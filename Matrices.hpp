@@ -5,8 +5,8 @@ class Matrices{
 	   	Matrices(int ,int ,float );
 	   	float ingresarM();
 	   	float Mostrar();
-	   	float suma();
-		
+	   	float suma(Matrices ,Matrices );
+		float getNumero(int ,int );
 	private:
 	  	int fila;
 	  	int columna;
