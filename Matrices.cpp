@@ -65,6 +65,23 @@ float Matrices::MultiEs(float Escalar){
 		cout<<endl;
 	}
 }
-float Matrices::Producto(Matrices Matriz1,Matrices Matriz2){
-	
+float Matrices::Producto(Matrices MatrizA,Matrices MatrizB){
+	float c;
+	for(int i=0;i<this->fila;i++){
+		
+		for(int j=0;j<this->columna;j++){
+			c=0;
+		   for(int z=0;z<this->fila;z++){
+		   	
+				Matriz[i][j]=MatrizA.getNumero(i,z)*MatrizB.getNumero(z,j)+c;
+				c=Matriz[i][j];
+			}
+		}
+	}
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			cout<<Matriz[i][j]<<" ";
+		}
+		cout<<endl;
+	}
 }

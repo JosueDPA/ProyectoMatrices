@@ -32,6 +32,12 @@ int main(){
 			Matriz2.ingresarM();
 			cout<<"el resultado de esta suma es "<<endl;
 			Matriz3.suma(Matriz1,Matriz2);
+		case 3:
+			Matriz1.ingresarM();
+			Matriz2.ingresarM();
+			cout<<"el resultado de la multiplicacion  de las matrices es "<<endl;
+	        Matriz3.Producto(Matriz1,Matriz2);
+			
 	}
 	
 	return 0;
