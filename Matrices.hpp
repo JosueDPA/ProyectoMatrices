@@ -2,7 +2,7 @@ class Matrices{
 	
 	
 	public:
-	   	Matrices(int ,int ,float );
+	   	Matrices(int ,int );
 	   	float ingresarM();
 	   	float Mostrar();
 	   	float suma(Matrices ,Matrices );

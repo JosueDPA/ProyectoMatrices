@@ -5,10 +5,10 @@ using std::endl;
 
 #include"Matrices.hpp"
 
-Matrices::Matrices(int Mifila,int Micolumna,float Mimatriz){
+Matrices::Matrices(int Mifila,int Micolumna){
 	this->fila=Mifila;
 	this->columna=Micolumna;
-	this->Matriz[100][100]=Mimatriz;
+	this->Matriz[100][100];
 	for(int i=0;i<this->fila;i++){
 		for(int j=0;j<this->columna;j++){
 			Matriz[i][j]=0;
@@ -41,7 +41,11 @@ float Matrices::Mostrar(){
 
 }
 float Matrices::suma(Matrices MatrizA,Matrices MatrizB){
-	
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			Matriz[i][j]=MatrizA.getNumero(i,j)+MatrizB.getNumero(i,j);
+		}
+	}
 }
 float Matrices::getNumero(int i, int j){
 	return this->Matriz[i][j];
