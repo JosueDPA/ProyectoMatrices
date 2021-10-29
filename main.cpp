@@ -2,20 +2,16 @@
 using std::cout;
 using std::cin;
 using std::endl;
-
+float Escalar;
 #include"Matrices.hpp"
 
 int main(){
 	
 	Matrices Matriz1(3,3);
-	Matrices Matriz2(3,3);
-	Matrices Matriz3(3,3);
-	
 	Matriz1.ingresarM();
 	Matriz1.Mostrar();
-	Matriz2.ingresarM();
-	Matriz2.Mostrar();
-	Matriz3.suma(Matriz1,Matriz2);
-	Matriz3.Mostrar();
+	cout<<"ingrese el escalar que desea multiplicar con la matriz "<<endl;
+	cin>>Escalar;
+	Matriz1.MultiEs(Escalar);
 	return 0;
 }

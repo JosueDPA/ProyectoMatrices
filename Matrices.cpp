@@ -50,3 +50,11 @@ float Matrices::suma(Matrices MatrizA,Matrices MatrizB){
 float Matrices::getNumero(int i, int j){
 	return this->Matriz[i][j];
 }
+float Matrices::MultiEs(float Escalar){
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			cout<<Matriz[i][j]*Escalar<<" ";
+		}
+		cout<<endl;
+	}
+}
