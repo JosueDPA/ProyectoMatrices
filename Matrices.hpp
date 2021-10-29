@@ -4,10 +4,11 @@ class Matrices{
 	public:
 	   	Matrices(int ,int );
 	   	float ingresarM();
-	   	float Mostrar();
 	   	float suma(Matrices ,Matrices );
 		float getNumero(int ,int );
 		float MultiEs(float );
+		float Gaus();
+		float Producto(Matrices ,Matrices);
 	private:
 	  	int fila;
 	  	int columna;

@@ -26,26 +26,33 @@ float Matrices::ingresarM(){
 			
 		}
 		
-	}
-	cout<<endl;
-}
-float Matrices::Mostrar(){
-	
+	}cout<<endl;
 	for(int i=0;i<this->fila;i++){
 		for(int j=0;j<this->columna;j++){
 			cout<<Matriz[i][j]<<" ";
 		}
 		cout<<endl;
 	}
+	
 	cout<<endl;
-
 }
+
+
+
 float Matrices::suma(Matrices MatrizA,Matrices MatrizB){
 	for(int i=0;i<this->fila;i++){
 		for(int j=0;j<this->columna;j++){
 			Matriz[i][j]=MatrizA.getNumero(i,j)+MatrizB.getNumero(i,j);
 		}
 	}
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			cout<<Matriz[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	
+	cout<<endl;
 }
 float Matrices::getNumero(int i, int j){
 	return this->Matriz[i][j];
@@ -57,4 +64,7 @@ float Matrices::MultiEs(float Escalar){
 		}
 		cout<<endl;
 	}
+}
+float Matrices::Producto(Matrices Matriz1,Matrices Matriz2){
+	
 }
