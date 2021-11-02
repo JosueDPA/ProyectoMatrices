@@ -16,6 +16,7 @@ int main(){
 	cout<<"1-si desea multiplicar la matriz por un escalar "<<endl;
 	cout<<"2-si desea sumar dos matrices "<<endl;
 	cout<<"3-si desea multiplicar dos matrices "<<endl;
+	cout<<"4-si desea reducir la matriz por medio de gauss jordan"<<endl;
 	Matrices Matriz1(fila,columna);
 	Matrices Matriz2(fila,columna);
 	Matrices Matriz3(fila,columna);
@@ -37,7 +38,10 @@ int main(){
 			Matriz2.ingresarM();
 			cout<<"el resultado de la multiplicacion  de las matrices es "<<endl;
 	        Matriz3.Producto(Matriz1,Matriz2);
-			
+		case 4:
+		    Matriz1.ingresarM();
+			cout<<"se realiza el proceso de reduccion "<<endl;
+			Matriz1.Gaus();
 	}
 	
 	return 0;

@@ -85,3 +85,32 @@ float Matrices::Producto(Matrices MatrizA,Matrices MatrizB){
 		cout<<endl;
 	}
 }
+float Matrices::Gaus(){
+	for(int i=0;i<this->fila;i++)
+	{
+	  float pivote=Matriz[i][i];
+	  float aux;
+	  for(int k=0;k<this->columna;k++)
+	  {
+	  	Matriz[i][k]=Matriz[i][k]/pivote;
+	  }
+	  for(int j=0;j<this->fila;j++)
+	  {
+	  	if(i!=j)
+		  {
+	  		aux=Matriz[j][i];
+	  		for(int g=0;g<this->fila;g++)
+			  {
+			  	Matriz[j][g]=Matriz[j][g]-aux*Matriz[i][g];
+			  }
+		  }
+	  }
+	 for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			cout<<Matriz[i][j]<<" ";
+		}
+		cout<<endl;
+	}cout<<endl;
+	}
+}
+
