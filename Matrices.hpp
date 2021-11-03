@@ -3,7 +3,7 @@ class Matrices{
 	
 	public:
 	   	Matrices(int ,int );
-	   	float ingresarM();
+	   	float ingresarM(int );
 	   	float suma(Matrices ,Matrices );
 		float getNumero(int ,int );
 		float MultiEs(float );

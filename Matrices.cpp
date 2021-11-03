@@ -2,7 +2,7 @@
 using std::cout;
 using std::cin;
 using std::endl;
-
+#include<windows.h>
 #include"Matrices.hpp"
 
 Matrices::Matrices(int Mifila,int Micolumna){
@@ -15,26 +15,24 @@ Matrices::Matrices(int Mifila,int Micolumna){
 		}
 	}
 }
-
-float Matrices::ingresarM(){
+COORD coord={0,0};
+void gotoxy(int x,int y){
+	coord.X=x;
+	coord.Y=y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+float Matrices::ingresarM(int f){
 	
 	cout<<"ingrese los valores de la  matriz"<<endl;
 	for(int i=0;i<this->fila;i++){
 		for(int j=0;j<this->columna;j++){
-			cout<<i+1<<" x "<<j+1<<" : ";
+			gotoxy(j*5,i+11+f);
 			cin>>Matriz[i][j];
 			
 		}
 		
 	}cout<<endl;
-	for(int i=0;i<this->fila;i++){
-		for(int j=0;j<this->columna;j++){
-			cout<<Matriz[i][j]<<" ";
-		}
-		cout<<endl;
-	}
 	
-	cout<<endl;
 }
 
 
@@ -60,7 +58,7 @@ float Matrices::getNumero(int i, int j){
 float Matrices::MultiEs(float Escalar){
 	for(int i=0;i<this->fila;i++){
 		for(int j=0;j<this->columna;j++){
-			cout<<Matriz[i][j]*Escalar<<" ";
+			cout<<Matriz[i][j]*Escalar<<"  ";
 		}
 		cout<<endl;
 	}
@@ -105,12 +103,12 @@ float Matrices::Gaus(){
 			  }
 		  }
 	  }
-	 for(int i=0;i<this->fila;i++){
-		for(int j=0;j<this->columna;j++){
-			cout<<Matriz[i][j]<<" ";
-		}
-		cout<<endl;
-	}cout<<endl;
+	    for(int i=0;i<this->fila;i++){
+		  for(int j=0;j<this->columna;j++){
+			cout<<Matriz[i][j]<<"  ";
+		   }
+		    cout<<endl;
+	    }cout<<endl;
 	}
 }
 

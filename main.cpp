@@ -23,23 +23,23 @@ int main(){
 	cin>>a;
 	switch(a){
 		case 1:
-		    Matriz1.ingresarM();
+		    Matriz1.ingresarM(0);
 		    cout<<"ingrese el escalar que se desea multiplicar "<<endl;
 		    cin>>Escalar;
 		    cout<<"Este seria el resultado de la multiplicacion"<<endl;
 		    Matriz1.MultiEs(Escalar);
 		case 2:
-			Matriz1.ingresarM();
-			Matriz2.ingresarM();
+			Matriz1.ingresarM(0);
+			Matriz2.ingresarM(fila+2);
 			cout<<"el resultado de esta suma es "<<endl;
 			Matriz3.suma(Matriz1,Matriz2);
 		case 3:
-			Matriz1.ingresarM();
-			Matriz2.ingresarM();
+			Matriz1.ingresarM(0);
+			Matriz2.ingresarM(fila+2);
 			cout<<"el resultado de la multiplicacion  de las matrices es "<<endl;
 	        Matriz3.Producto(Matriz1,Matriz2);
 		case 4:
-		    Matriz1.ingresarM();
+		    Matriz1.ingresarM(0);
 			cout<<"se realiza el proceso de reduccion "<<endl;
 			Matriz1.Gaus();
 	}
