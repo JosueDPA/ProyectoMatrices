@@ -5,7 +5,8 @@ using std::endl;
 #include<windows.h>
 #include<stdlib.h>
 #include"Matrices.hpp"
-
+//Constructores
+//primer constructor
 Matriz::Matriz(int fila,int columna){
 	this->fila=fila;
 	this->columna=columna;
@@ -19,6 +20,7 @@ Matriz::Matriz(int fila,int columna){
 		}
 	}
 }
+//segundo constructor
 Matriz::Matriz(int fila){
 	this->fila=fila;
 	this->columna=columna;
@@ -34,6 +36,7 @@ Matriz::Matriz(int fila){
 	
 	
 }
+//Destructor
 Matriz::~Matriz(){
 	
 	delete[] matriz;
@@ -45,6 +48,7 @@ void gotoxy(int x,int y){
 	coord.Y=y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
+//funciones miembros 
 float Matriz::ingresarM(int f){
 	
 	cout<<"ingrese los valores de la  matriz"<<endl;
@@ -76,7 +80,7 @@ float Matriz::suma(Matriz MatrizA,Matriz MatrizB){
 	
 	cout<<endl;
 }
-float Matriz::getNumero(int i, int j){
+const float Matriz::getNumero(int i, int j){
 	return *(*(matriz+i)+j);
 }
 float Matriz::MultiEs(float Escalar){

@@ -7,7 +7,7 @@ class Matriz{
 	   	~Matriz();
 	   	float ingresarM(int );
 	   	float suma(Matriz ,Matriz );
-		float getNumero(int ,int );
+		const float getNumero(int ,int );
 		float MultiEs(float );
 		float Gaus();
 		float Producto(Matriz ,Matriz);
