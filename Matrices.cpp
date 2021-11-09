@@ -21,7 +21,7 @@ Matriz::Matriz(int fila,int columna){
 }
 Matriz::~Matriz(){
 	
-	
+	delete[] matriz;
 	
 }
 COORD coord={0,0};
