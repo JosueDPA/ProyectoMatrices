@@ -13,6 +13,6 @@ class Matriz{
 	private:
 	  	int fila;
 	  	int columna;
-	  	float matriz[100][100];
+	  	float **matriz;
 		
 };
