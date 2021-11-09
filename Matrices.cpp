@@ -36,12 +36,7 @@ Matriz::Matriz(int fila){
 	
 	
 }
-//Destructor
-Matriz::~Matriz(){
-	
-	delete[] matriz;
-	
-}
+
 COORD coord={0,0};
 void gotoxy(int x,int y){
 	coord.X=x;
@@ -83,6 +78,7 @@ float Matriz::suma(Matriz MatrizA,Matriz MatrizB){
 const float Matriz::getNumero(int i, int j){
 	return *(*(matriz+i)+j);
 }
+
 float Matriz::MultiEs(float Escalar){
 	for(int i=0;i<this->fila;i++){
 		for(int j=0;j<this->columna;j++){
@@ -138,5 +134,11 @@ float Matriz::Gaus(){
 		    cout<<endl;
 	    }cout<<endl;
 	}
+}
+//Destructor
+Matriz::~Matriz(){
+	
+	delete[] matriz;
+	
 }
 

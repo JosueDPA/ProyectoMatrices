@@ -19,7 +19,7 @@ int main(){
 	cout<<"4)   si desea reducir la matriz por medio de gauss jordan"<<endl;
 	Matriz *ptrE1 = new Matriz(fila,columna);
 	Matriz *ptrE2 = new Matriz(fila,columna);
-	Matriz *ptrE3 = new Matriz(fila);
+	Matriz *ptrE3 = new Matriz(fila,columna);
 	cin>>a;
 	switch(a){
 		case 1:
@@ -28,7 +28,7 @@ int main(){
 		       cin>>Escalar;
 		       cout<<"Este seria el resultado de la multiplicacion"<<endl;
 		       ptrE1->MultiEs(Escalar);
-		       delete ptrE1;
+		       
 		       return 0;
 		    
 		case 2:
@@ -36,24 +36,20 @@ int main(){
 			   ptrE2->ingresarM(fila+2);
 			   cout<<"el resultado de esta suma es "<<endl;
 			   ptrE3->suma(*ptrE1,*ptrE2);
-			   delete ptrE1;
-			   delete ptrE2;
-			   delete ptrE3;
+			   
 			   return 0;
 		case 3:
 			    ptrE1->ingresarM(0);
 			    ptrE2->ingresarM(fila+2);
 			    cout<<"el resultado de la multiplicacion  de las matrices es "<<endl;
 	            ptrE3->Producto(*ptrE1,*ptrE2);
-	            delete ptrE1;
-			    delete ptrE2;
-			    delete ptrE3;
+	            
 	            return 0;
 		case 4:
 		        ptrE1->ingresarM(0);
 			    cout<<"se realiza el proceso de reduccion "<<endl;
 			    ptrE1->Gaus();
-			    delete ptrE1;
+			    
 			    return 0;
 	}
 	

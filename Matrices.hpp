@@ -10,7 +10,7 @@ class Matriz{
 		const float getNumero(int ,int );
 		float MultiEs(float );
 		float Gaus();
-		float Producto(Matriz ,Matriz);
+		float Producto(Matriz ,Matriz );
 	private:
 	  	int fila;
 	  	int columna;
