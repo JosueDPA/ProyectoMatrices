@@ -17,35 +17,35 @@ int main(){
 	cout<<"2)   si desea sumar dos matrices "<<endl;
 	cout<<"3)   si desea multiplicar dos matrices "<<endl;
 	cout<<"4)   si desea reducir la matriz por medio de gauss jordan"<<endl;
-	Matriz Matriz1(fila,columna);
-	Matriz Matriz2(fila,columna);
-	Matriz Matriz3(fila,columna);
+	Matriz *ptrE1 = new Matriz(fila,columna);
+	Matriz *ptrE2 = new Matriz(fila,columna);
+	Matriz *ptrE3 = new Matriz(fila,columna);
 	cin>>a;
 	switch(a){
 		case 1:
-		       Matriz1.ingresarM(0);
+		       ptrE1->ingresarM(0);
 		       cout<<"ingrese el escalar que se desea multiplicar "<<endl;
 		       cin>>Escalar;
 		       cout<<"Este seria el resultado de la multiplicacion"<<endl;
-		       Matriz1.MultiEs(Escalar);
+		       ptrE1->MultiEs(Escalar);
 		       return 0;
 		    
 		case 2:
-			   Matriz1.ingresarM(0);
-			   Matriz2.ingresarM(fila+2);
+			   ptrE1->ingresarM(0);
+			   ptrE2->ingresarM(fila+2);
 			   cout<<"el resultado de esta suma es "<<endl;
-			   Matriz3.suma(Matriz1,Matriz2);
+			   ptrE3->suma(*ptrE1,*ptrE2);
 			   return 0;
 		case 3:
-			    Matriz1.ingresarM(0);
-			    Matriz2.ingresarM(fila+2);
+			    ptrE1->ingresarM(0);
+			    ptrE2->ingresarM(fila+2);
 			    cout<<"el resultado de la multiplicacion  de las matrices es "<<endl;
-	            Matriz3.Producto(Matriz1,Matriz2);
+	            ptrE3->Producto(*ptrE1,*ptrE2);
 	            return 0;
 		case 4:
-		        Matriz1.ingresarM(0);
+		        ptrE1->ingresarM(0);
 			    cout<<"se realiza el proceso de reduccion "<<endl;
-			    Matriz1.Gaus();
+			    ptrE1->Gaus();
 			    return 0;
 	}
 	
