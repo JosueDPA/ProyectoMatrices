@@ -19,7 +19,7 @@ int main(){
 	cout<<"4)   si desea reducir la matriz por medio de gauss jordan"<<endl;
 	Matriz *ptrE1 = new Matriz(fila,columna);
 	Matriz *ptrE2 = new Matriz(fila,columna);
-	Matriz *ptrE3 = new Matriz(fila,columna);
+	Matriz *ptrE3 = new Matriz(fila);
 	cin>>a;
 	switch(a){
 		case 1:

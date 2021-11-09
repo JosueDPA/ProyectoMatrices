@@ -19,6 +19,21 @@ Matriz::Matriz(int fila,int columna){
 		}
 	}
 }
+Matriz::Matriz(int fila){
+	this->fila=fila;
+	this->columna=columna;
+	matriz = new float*[fila];
+	for(int i=0;i<fila;i++){
+		matriz[i] = new float[columna];
+	}
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			*(*(matriz+i)+j)=0;
+		}
+	}
+	
+	
+}
 Matriz::~Matriz(){
 	
 	delete[] matriz;

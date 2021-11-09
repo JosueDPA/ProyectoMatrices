@@ -3,6 +3,7 @@ class Matriz{
 	
 	public:
 	   	Matriz(int ,int );
+	   	Matriz(int );
 	   	~Matriz();
 	   	float ingresarM(int );
 	   	float suma(Matriz ,Matriz );
