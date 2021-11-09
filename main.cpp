@@ -17,18 +17,18 @@ int main(){
 	cout<<"2)   si desea sumar dos matrices "<<endl;
 	cout<<"3)   si desea multiplicar dos matrices "<<endl;
 	cout<<"4)   si desea reducir la matriz por medio de gauss jordan"<<endl;
-	Matrices Matriz1(fila,columna);
-	Matrices Matriz2(fila,columna);
-	Matrices Matriz3(fila,columna);
+	Matriz Matriz1(fila,columna);
+	Matriz Matriz2(fila,columna);
+	Matriz Matriz3(fila,columna);
 	cin>>a;
 	switch(a){
 		case 1:
-		     Matriz1.ingresarM(0);
-		     cout<<"ingrese el escalar que se desea multiplicar "<<endl;
-		     cin>>Escalar;
-		     cout<<"Este seria el resultado de la multiplicacion"<<endl;
-		     Matriz1.MultiEs(Escalar);
-		     return 0;
+		       Matriz1.ingresarM(0);
+		       cout<<"ingrese el escalar que se desea multiplicar "<<endl;
+		       cin>>Escalar;
+		       cout<<"Este seria el resultado de la multiplicacion"<<endl;
+		       Matriz1.MultiEs(Escalar);
+		       return 0;
 		    
 		case 2:
 			   Matriz1.ingresarM(0);

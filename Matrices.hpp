@@ -1,17 +1,18 @@
-class Matrices{
+class Matriz{
 	
 	
 	public:
-	   	Matrices(int ,int );
+	   	Matriz(int ,int );
+	   	~Matriz();
 	   	float ingresarM(int );
-	   	float suma(Matrices ,Matrices );
+	   	float suma(Matriz ,Matriz );
 		float getNumero(int ,int );
 		float MultiEs(float );
 		float Gaus();
-		float Producto(Matrices ,Matrices);
+		float Producto(Matriz ,Matriz);
 	private:
 	  	int fila;
 	  	int columna;
-	  	float Matriz[100][100];
+	  	float matriz[100][100];
 		
 };
