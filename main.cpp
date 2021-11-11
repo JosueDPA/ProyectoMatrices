@@ -46,9 +46,7 @@ int main(){
 	            
 	            return 0;
 		case 4:
-		        ptrE1->ingresarM(0);
-			    cout<<"se realiza el proceso de reduccion "<<endl;
-			    ptrE1->Gaus();
+		        
 			    
 			    return 0;
 	}

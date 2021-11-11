@@ -17,3 +17,13 @@ class Matriz{
 	  	float **matriz;
 		
 };
+class Solucion{
+	public:
+	 Solucion(int ,int );
+	 
+	 	
+	private:
+	 int fila,columna;
+	 float *result;
+	 float **inc;	
+};

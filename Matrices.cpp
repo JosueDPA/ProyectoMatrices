@@ -141,4 +141,15 @@ Matriz::~Matriz(){
 	delete[] matriz;
 	
 }
+//clase solucion
+//constructor
+Solucion::Solucion(int fila,int columna){
+	this->fila=fila;
+	this->columna=columna;
+	inc = new float*[fila];
+	for(int i=0;i<fila;i++){
+		inc[i] = new float[columna];
+	}
+	result = new float[fila];
+}
 
