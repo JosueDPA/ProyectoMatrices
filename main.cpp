@@ -8,7 +8,7 @@ int fila,columna,a;
 #include"Matrices.hpp"
 
 int main(){
-	cout<<"Hola este es la calculadora de Matrices MxM"<<endl;
+	cout<<"Hola este es la calculadora de Matrices"<<endl;
 	cout<<"ingrese el tamaño de la matriz :"<<endl;
 	cin>>fila;
 	columna=fila;
@@ -20,6 +20,7 @@ int main(){
 	Matriz *ptrE1 = new Matriz(fila,columna);
 	Matriz *ptrE2 = new Matriz(fila,columna);
 	Matriz *ptrE3 = new Matriz(fila,columna);
+	Solucion *gtrE1 = new Solucion(fila,columna);
 	cin>>a;
 	switch(a){
 		case 1:
@@ -45,9 +46,13 @@ int main(){
 	            ptrE3->Producto(*ptrE1,*ptrE2);
 	            
 	            return 0;
+	            
 		case 4:
-		        
-			    
+			    columna=fila+1;
+		        Solucion *gtrE1 = new Solucion(fila,columna);
+		        cin>>*gtrE1;
+		        cout<<endl;
+			    gtrE1->Gaus();
 			    return 0;
 	}
 	
