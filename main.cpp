@@ -20,15 +20,15 @@ int main(){
 	Matriz *ptrE1 = new Matriz(fila,columna);
 	Matriz *ptrE2 = new Matriz(fila,columna);
 	Matriz *ptrE3 = new Matriz(fila,columna);
-	Solucion *gtrE1 = new Solucion(fila,columna);
+	Matriz *Resul = new Matriz(fila,columna);
 	cin>>a;
 	switch(a){
 		case 1:
-		       ptrE1->ingresarM(0);
+		       cin>>*ptrE1;
 		       cout<<"ingrese el escalar que se desea multiplicar "<<endl;
 		       cin>>Escalar;
 		       cout<<"Este seria el resultado de la multiplicacion"<<endl;
-		       ptrE1->MultiEs(Escalar);
+		       *Resul = ptrE1*Escalar;
 		       
 		       return 0;
 		    

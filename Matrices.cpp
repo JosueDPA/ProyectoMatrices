@@ -22,21 +22,18 @@ Matriz::Matriz(int fila,int columna){
 	}
 }
 //segundo constructor
-Matriz::Matriz(int fila){
-	this->fila=fila;
-	this->columna=columna;
+Matriz::Matriz(){
+	this->fila=0;
+	this->columna=0;
 	matriz = new float*[fila];
 	for(int i=0;i<fila;i++){
 		matriz[i] = new float[columna];
 	}
-	for(int i=0;i<this->fila;i++){
-		for(int j=0;j<this->columna;j++){
-			*(*(matriz+i)+j)=0;
-		}
-	}
+	
 	
 	
 }
+
 
 COORD coord={0,0};
 void gotoxy(int x,int y){
@@ -44,6 +41,38 @@ void gotoxy(int x,int y){
 	coord.Y=y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
+istream &operator >>(istream &entrada,Matriz &Matriz1){
+    for(int i=0;i<Matriz1.fila;i++)
+	{
+		
+		for(int j=0;j<Matriz1.columna;j++)
+		{
+			gotoxy(j*6,i+11+Matriz1.fila);
+			Matriz1.setM(i,j);
+			}	
+		}
+		
+		
+	}
+ostream &operator <<(ostream &salida,Matriz &Matriz1)
+{
+	for(int i=0;i<Matriz1.fila;i++)
+	{
+		for(int j=0;j<Matriz1.columna;j++)
+		{
+			salida<<Matriz1.getNumero(i,j)<<"  ";
+		}
+		
+		
+		cout<<endl;
+	}cout<<endl;
+}
+Matriz &operator +(Matriz &Matriz1,float escalar){
+	
+	Matriz1.MultiEs(escalar);
+	return Matriz1;
+}
+
 //funciones miembros 
 float Matriz::ingresarM(int f){
 	
@@ -58,7 +87,10 @@ float Matriz::ingresarM(int f){
 	}cout<<endl;
 	
 }
-
+float Matriz::setM(int i,int j)
+{
+	cin>>*(*(matriz+i)+j);
+}
 
 
 float Matriz::suma(Matriz MatrizA,Matriz MatrizB){
@@ -108,40 +140,16 @@ float Matriz::Producto(Matriz MatrizA,Matriz MatrizB){
 		cout<<endl;
 	}
 }
-float Matriz::Gaus(){
-	for(int i=0;i<this->fila;i++)
-	{
-	  float pivote=*(*(matriz+i)+i);
-	  float aux;
-	  for(int k=0;k<this->columna;k++)
-	  {
-	  	*(*(matriz+i)+k)=*(*(matriz+i)+k)/pivote;
-	  }
-	  for(int j=0;j<this->fila;j++)
-	  {
-	  	if(i!=j)
-		  {
-	  		aux=*(*(matriz+j)+i);
-	  		for(int g=0;g<this->fila;g++)
-			  {
-			  	*(*(matriz+j)+g)=*(*(matriz+j)+g)-aux*(*(*(matriz+i)+g));
-			  }
-		  }
-	  }
-	    for(int i=0;i<this->fila;i++){
-		  for(int j=0;j<this->columna;j++){
-			cout<<*(*(matriz+i)+j)<<"  ";
-		   }
-		    cout<<endl;
-	    }cout<<endl;
-	}
-}
+
 //Destructor
 Matriz::~Matriz(){
 	
 	delete[] matriz;
 	
 }
+
+
+
 //clase solucion
 //constructor
 Solucion::Solucion(int fila,int columna){
@@ -156,15 +164,15 @@ Solucion::Solucion(int fila,int columna){
 
 
 istream &operator >>(istream &entrada,Solucion &Solucion1){
-    for(int i=0;i<Solucion1.getFila();i++)
+    for(int i=0;i<Solucion1.fila;i++)
 	{
 		
-		for(int j=0;j<Solucion1.getColum()-1;j++)
+		for(int j=0;j<Solucion1.columna-1;j++)
 		{
-			gotoxy(j*6,i+11+Solucion1.getFila());
+			gotoxy(j*6,i+11+Solucion1.fila);
 			Solucion1.setCo(i,j);
-			if(j==Solucion1.getColum()-2){
-				gotoxy(j*6+14,i+11+Solucion1.getFila());
+			if(j==Solucion1.columna-2){
+				gotoxy(j*6+14,i+11+Solucion1.fila);
 				Solucion1.setRes(i);
 			}	
 		}
@@ -175,12 +183,7 @@ istream &operator >>(istream &entrada,Solucion &Solucion1){
 float Solucion::setCo(int i,int j){
 	cin>>*(*(inc+i)+j);
 }
-float Solucion::getFila(){
-	return this->fila;
-}
-float Solucion::getColum(){
-	return this->columna;
-}
+
 float Solucion::setRes(int i){
 	cin>>this->result[i];
 }
@@ -192,9 +195,9 @@ float Solucion::getRes(int i){
 }
 ostream &operator <<(ostream &salida,Solucion &solucion1)
 {
-	for(int i=0;i<solucion1.getFila();i++)
+	for(int i=0;i<solucion1.fila;i++)
 	{
-		for(int j=0;j<solucion1.getColum()-1;j++)
+		for(int j=0;j<solucion1.columna-1;j++)
 		{
 			salida<<solucion1.getCo(i,j)<<"  ";
 		}
