@@ -39,6 +39,7 @@ int main(){
 			        case 1:
 			               cout<<"ingrese los elementos de la primera matriz"<<endl;
 			               cin>>*ptrE1;
+			               cout<<"ingrese los elementos de la segunda matriz"<<endl;
 			               cin>>*ptrE2;
 			               cout<<"el resultado de esta suma es "<<endl;
 			               *ptrE3=*ptrE1+*ptrE2;
@@ -46,6 +47,7 @@ int main(){
 			        case 2:
 			               cout<<"ingrese los elementos de la primera matriz"<<endl;
 			               cin>>*ptrE1;
+			               cout<<"ingrese los elementos de la segunda matriz"<<endl;
 			               cin>>*ptrE2;
 			               cout<<"el resultado de esta suma es "<<endl;
 			               *ptrE3=*ptrE1-*ptrE2;
@@ -55,8 +57,10 @@ int main(){
 			   
 			   return 0;
 		case 3:
-			    ptrE1->ingresarM(0);
-			    ptrE2->ingresarM(fila+2);
+			    cout<<"ingrese los elementos de la primera matriz"<<endl;
+			    cin>>*ptrE1;
+			    cout<<"ingrese los elementos de la segunda matriz"<<endl;
+			    cin>>*ptrE2;
 			    cout<<"el resultado de la multiplicacion  de las matrices es "<<endl;
 	            ptrE3->Producto(*ptrE1,*ptrE2);
 	            
