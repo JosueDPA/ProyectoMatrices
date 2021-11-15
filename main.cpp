@@ -43,14 +43,16 @@ int main(){
 			               cin>>*ptrE2;
 			               cout<<"el resultado de esta suma es "<<endl;
 			               *ptrE3=*ptrE1+*ptrE2;
+			               cout<<*ptrE3;
 			               return 0;
 			        case 2:
 			               cout<<"ingrese los elementos de la primera matriz"<<endl;
 			               cin>>*ptrE1;
 			               cout<<"ingrese los elementos de la segunda matriz"<<endl;
 			               cin>>*ptrE2;
-			               cout<<"el resultado de esta suma es "<<endl;
+			               cout<<"el resultado de esta resta es "<<endl;
 			               *ptrE3=*ptrE1-*ptrE2;
+			               cout<<*ptrE3;
 			               return 0;
 			   
 			   }

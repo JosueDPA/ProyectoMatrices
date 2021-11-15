@@ -34,6 +34,7 @@ class Solucion{
 	friend ostream &operator <<(ostream &,Solucion &);
 	public:
 	 Solucion(int ,int );
+	 ~Solucion();
 	 float setCo(int ,int );
 	 float setRes(int);
 	 float getCo(int ,int );

@@ -248,5 +248,9 @@ float Solucion::Gaus(){
 	    }cout<<endl;
 	}
 }
+Solucion::~Solucion(){
+	delete[] result;
+	delete[] inc;
+}
 
 
