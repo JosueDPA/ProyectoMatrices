@@ -29,6 +29,11 @@ Matriz::Matriz(){
 	for(int i=0;i<fila;i++){
 		matriz[i] = new float[columna];
 	}
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			*(*(matriz+i)+j)=0;
+		}
+	}
 	
 	
 	
@@ -47,7 +52,7 @@ istream &operator >>(istream &entrada,Matriz &Matriz1){
 		
 		for(int j=0;j<Matriz1.columna;j++)
 		{
-			gotoxy(j*6,i+11+Matriz1.fila);
+			cout<<i+1<<"x"<<j+1<<" :";
 			Matriz1.setM(i,j);
 			}	
 		}
@@ -67,10 +72,39 @@ ostream &operator <<(ostream &salida,Matriz &Matriz1)
 		cout<<endl;
 	}cout<<endl;
 }
-Matriz &operator +(Matriz &Matriz1,float escalar){
+Matriz &Matriz::operator+(Matriz &M1){
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			this->matriz[i][j]=this->matriz[i][j]+M1.getNumero(i,j);
+		}
+	}
+	return *this;
+}
+Matriz &Matriz::operator-(Matriz &M1){
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			this->matriz[i][j]=this->matriz[i][j]-M1.getNumero(i,j);
+		}
+	}
+	return *this;
 	
-	Matriz1.MultiEs(escalar);
-	return Matriz1;
+}
+
+Matriz &Matriz::operator*(float Escalar){
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			this->matriz[i][j]=this->matriz[i][j]*Escalar;
+		}
+	}
+	return *this;
+}
+Matriz &Matriz::operator=(Matriz &Matriz1){
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			this->matriz[i][j]=Matriz1.getNumero(i,j);
+		}
+	}
+	return *this;
 }
 
 //funciones miembros 
@@ -86,6 +120,18 @@ float Matriz::ingresarM(int f){
 		
 	}cout<<endl;
 	
+}
+float Matriz::setN(float r,int i,int j){
+	*(*(matriz+i)+j)=r;
+}
+int Matriz::getF(){
+	return this->fila;
+}
+int Matriz::getC(){
+	return this->columna;
+}
+float Matriz::Ma(int i,int j){
+	return *(*(matriz+i)+j);
 }
 float Matriz::setM(int i,int j)
 {

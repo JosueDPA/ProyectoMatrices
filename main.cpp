@@ -4,7 +4,7 @@ using std::cin;
 using std::endl;
 #include<stdlib.h>
 float Escalar;
-int fila,columna,a;
+int fila,columna,a,b;
 #include"Matrices.hpp"
 
 int main(){
@@ -28,15 +28,30 @@ int main(){
 		       cout<<"ingrese el escalar que se desea multiplicar "<<endl;
 		       cin>>Escalar;
 		       cout<<"Este seria el resultado de la multiplicacion"<<endl;
-		       *Resul = ptrE1*Escalar;
-		       
+		       *ptrE2=*ptrE1*Escalar; 
+		       cout<<ptrE2;
 		       return 0;
 		    
 		case 2:
-			   ptrE1->ingresarM(0);
-			   ptrE2->ingresarM(fila+2);
-			   cout<<"el resultado de esta suma es "<<endl;
-			   ptrE3->suma(*ptrE1,*ptrE2);
+			cout<<"ingrese 1 si desea sumar y 2 si desea restar "<<endl;
+			cin>>b;
+			   switch(b){
+			        case 1:
+			               cout<<"ingrese los elementos de la primera matriz"<<endl;
+			               cin>>*ptrE1;
+			               cin>>*ptrE2;
+			               cout<<"el resultado de esta suma es "<<endl;
+			               *ptrE3=*ptrE1+*ptrE2;
+			               return 0;
+			        case 2:
+			               cout<<"ingrese los elementos de la primera matriz"<<endl;
+			               cin>>*ptrE1;
+			               cin>>*ptrE2;
+			               cout<<"el resultado de esta suma es "<<endl;
+			               *ptrE3=*ptrE1-*ptrE2;
+			               return 0;
+			   
+			   }
 			   
 			   return 0;
 		case 3:

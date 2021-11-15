@@ -8,17 +8,25 @@ class Matriz{
 	
 	friend istream &operator >>(istream &,Matriz &);
 	friend ostream &operator <<(ostream &,Matriz &);
-	friend Matriz &operator *(Matriz &,float &);
+	
 	public:
 	   	Matriz(int ,int );
 	   	Matriz();
 	   	~Matriz();
+	   	Matriz &operator+(Matriz &);
+	   	Matriz &operator-(Matriz &);
+	   	Matriz &operator*(float );
+	   	Matriz &operator=(Matriz &);
 	   	float setM(int ,int );
 	   	float ingresarM(int );
 	   	float suma(Matriz ,Matriz );
 		const float getNumero(int ,int );
 		float MultiEs(float );
 		float Producto(Matriz ,Matriz );
+		float setN(float ,int ,int );
+		int getF();
+		int getC();
+		float Ma(int i,int j);
 	private:
 	  	int fila;
 	  	int columna;
