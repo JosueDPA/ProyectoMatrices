@@ -6,6 +6,7 @@ using std::endl;
 float Escalar;
 int fila,columna,a,b;
 #include"Matrices.hpp"
+#include"Solucion.hpp"
 
 int main(){
 	cout<<"Hola este es la calculadora de Matrices"<<endl;
