@@ -38,6 +38,21 @@ Matriz::Matriz(){
 	
 	
 }
+Matriz::Matriz(Matriz &M1){
+	this->fila=M1.fila;
+	this->columna=M1.columna;
+	matriz = new float*[this->fila];
+	for(int i=0;i<fila;i++){
+		matriz[i] = new float[this->columna];
+	
+	}
+	for(int i=0;i<this->fila;i++){
+		for(int j=0;j<this->columna;j++){
+			*(*(matriz+i)+j)=M1.matriz[i][j];
+		}
+	}
+	
+}
 
 
 COORD coord={0,0};
@@ -72,39 +87,84 @@ ostream &operator <<(ostream &salida,Matriz &Matriz1)
 		cout<<endl;
 	}cout<<endl;
 }
-Matriz &Matriz::operator+(Matriz &M1){
-	for(int i=0;i<this->fila;i++){
-		for(int j=0;j<this->columna;j++){
-			this->matriz[i][j]=this->matriz[i][j]+M1.getNumero(i,j);
+Matriz &operator *(Matriz &M1,Matriz &M2){
+		int a=M1.fila;
+		int b=M2.columna;
+		Matriz Resultado(a,b);
+		if(M1.columna==M2.fila){
+			float c;
+	        for(int i=0;i<M1.fila;i++){
+		
+	 	         for(int j=0;j<M2.columna;j++){
+			           c=0;
+		              for(int z=0;z<M2.fila;z++){
+		   	
+				        Resultado.matriz[i][j]=M1.getNumero(i,z)*M2.getNumero(z,j)+c;
+				        c=Resultado.matriz[i][j];
+				        
+			          }
+			         
+		         }
+		         
+		         
+	        }
+	        
+	     return *(new Matriz(Resultado));
 		}
-	}
-	return *this;
+		else{
+			cout<<"no pueden ser multiplicadas por la dmensiones de las matrices"<<endl;
+		}
+
 }
-Matriz &Matriz::operator-(Matriz &M1){
-	for(int i=0;i<this->fila;i++){
-		for(int j=0;j<this->columna;j++){
-			this->matriz[i][j]=this->matriz[i][j]-M1.getNumero(i,j);
+Matriz &operator +(Matriz &M1,Matriz &M2){
+	int a=M1.getF();
+	int b=M1.getC();
+	Matriz Result(a,b);
+	if(M1.getF()==M2.getF() && M1.getC()==M2.getC()){
+		for(int i=0;i<a;i++)
+		{
+			for(int j=0;j<b;j++)
+			{
+				Result.matriz[i][j]=M1.getNumero(i,j)+M2.getNumero(i,j);
+			}
 		}
+	 return *(new Matriz(Result));;
+	}else{
+		cout<<"las dimensiones de las matrices que desea sumar son difrerentes"<<endl;
 	}
-	return *this;
 	
 }
-
-Matriz &Matriz::operator*(float Escalar){
-	for(int i=0;i<this->fila;i++){
-		for(int j=0;j<this->columna;j++){
-			this->matriz[i][j]=this->matriz[i][j]*Escalar;
+Matriz &operator -(Matriz &M1,Matriz &M2){
+	int a=M1.getF();
+	int b=M1.getC();
+	Matriz Result(a,b);
+	if(M1.getF()==M2.getF() && M1.getC()==M2.getC()){
+		for(int i=0;i<a;i++)
+		{
+			for(int j=0;j<b;j++)
+			{
+				Result.matriz[i][j]=M1.getNumero(i,j)-M2.getNumero(i,j);
+			}
 		}
+		return *(new Matriz(Result));
+	}else{
+		cout<<"las dimensiones de las matrices que desea sumar son difrerentes"<<endl;
 	}
-	return *this;
+	
 }
-Matriz &Matriz::operator=(Matriz &Matriz1){
-	for(int i=0;i<this->fila;i++){
-		for(int j=0;j<this->columna;j++){
-			this->matriz[i][j]=Matriz1.getNumero(i,j);
+Matriz &operator *(Matriz &M1,float &Escalar){
+	int a=M1.getF();
+	int b=M1.getC();
+	Matriz Result(a,b);
+	for(int i=0;i<a;i++)
+	{
+		for(int j=0;j<b;j++)
+		{
+			Result.matriz[i][j]=M1.getNumero(i,j)*Escalar;
 		}
 	}
-	return *this;
+	cout<<Result;
+	return *(new Matriz(Result));
 }
 
 //funciones miembros 
@@ -123,33 +183,12 @@ float Matriz::setM(int i,int j)
 	cin>>*(*(matriz+i)+j);
 }
 
-
-
 const float Matriz::getNumero(int i, int j){
 	return *(*(matriz+i)+j);
 }
 
 
-float Matriz::Producto(Matriz MatrizA,Matriz MatrizB){
-	float c;
-	for(int i=0;i<this->fila;i++){
-		
-		for(int j=0;j<this->columna;j++){
-			c=0;
-		   for(int z=0;z<this->fila;z++){
-		   	
-				*(*(matriz+i)+j)=MatrizA.getNumero(i,z)*MatrizB.getNumero(z,j)+c;
-				c=*(*(matriz+i)+j);
-			}
-		}
-	}
-	for(int i=0;i<this->fila;i++){
-		for(int j=0;j<this->columna;j++){
-			cout<<*(*(matriz+i)+j)<<" ";
-		}
-		cout<<endl;
-	}
-}
+
 
 //Destructor
 Matriz::~Matriz(){
@@ -179,10 +218,10 @@ istream &operator >>(istream &entrada,Solucion &Solucion1){
 		
 		for(int j=0;j<Solucion1.columna-1;j++)
 		{
-			gotoxy(j*6,i+11+Solucion1.fila);
+			gotoxy(j*6,i+9+Solucion1.fila);
 			Solucion1.setCo(i,j);
 			if(j==Solucion1.columna-2){
-				gotoxy(j*6+14,i+11+Solucion1.fila);
+				gotoxy(j*6+14,i+9+Solucion1.fila);
 				Solucion1.setRes(i);
 			}	
 		}

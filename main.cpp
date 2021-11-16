@@ -21,6 +21,7 @@ int main(){
 	Matriz *ptrE2 = new Matriz(fila,columna);
 	Matriz *ptrE3 = new Matriz(fila,columna);
 	Matriz *Resul = new Matriz(fila,columna);
+	cout<<endl;
 	cin>>a;
 	switch(a){
 		case 1:
@@ -64,11 +65,13 @@ int main(){
 			    cout<<"ingrese los elementos de la segunda matriz"<<endl;
 			    cin>>*ptrE2;
 			    cout<<"el resultado de la multiplicacion  de las matrices es "<<endl;
-	            ptrE3->Producto(*ptrE1,*ptrE2);
+	            *ptrE3=*ptrE1**ptrE2;
+	            cout<<*ptrE3;
 	            
 	            return 0;
 	            
 		case 4:
+			    cout<<"ingrese los elementos de la matriz y los resultados"<<endl;
 			    columna=fila+1;
 		        Solucion *gtrE1 = new Solucion(fila,columna);
 		        cin>>*gtrE1;
