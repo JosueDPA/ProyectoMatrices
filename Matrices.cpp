@@ -158,7 +158,6 @@ Matriz &operator *(Matriz &M1,float &Escalar){
 			Result.matriz[i][j]=M1.getNumero(i,j)*Escalar;
 		}
 	}
-	cout<<Result;
 	return *(new Matriz(Result));
 }
 

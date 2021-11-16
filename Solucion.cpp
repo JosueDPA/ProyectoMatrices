@@ -32,10 +32,10 @@ istream &operator >>(istream &entrada,Solucion &Solucion1){
 		
 		for(int j=0;j<Solucion1.columna-1;j++)
 		{
-			gotoxy(j*6,i+9+Solucion1.fila);
+			gotoxy(j*6,i+15+Solucion1.fila);
 			Solucion1.setCo(i,j);
 			if(j==Solucion1.columna-2){
-				gotoxy(j*6+14,i+9+Solucion1.fila);
+				gotoxy(j*6+14,i+15+Solucion1.fila);
 				Solucion1.setRes(i);
 			}	
 		}
